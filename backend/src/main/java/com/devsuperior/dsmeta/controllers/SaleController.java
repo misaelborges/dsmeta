@@ -18,6 +18,7 @@ public class SaleController {
     @Autowired
     private SaleService service;
 
+
     @GetMapping
     public Page<Sale> findSales(
         @RequestParam(value = "minDate", defaultValue = "") String minDate, 
@@ -25,4 +26,5 @@ public class SaleController {
         Pageable pageable) {
         return service.findSales(minDate, maxDate, pageable);
     }
+
 }
